@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: lol
+  profiles:
+    active: local
+    include:
+      - database
