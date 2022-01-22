@@ -6,6 +6,13 @@ spring:
     include:
       - database
 
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-unknown-properties: false
+      fail-on-null-for-primitives: true
+
 server:
   error:
     whitelabel:
