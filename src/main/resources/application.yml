@@ -5,3 +5,20 @@ spring:
     active: local
     include:
       - database
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  shutdown: graceful
+
+management:
+  server:
+    port: 8888
+  health:
+    db:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,httpTrace,prometheus
