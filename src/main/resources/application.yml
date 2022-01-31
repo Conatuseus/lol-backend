@@ -5,6 +5,7 @@ spring:
     active: local
     include:
       - database
+      - http
 
   jackson:
     property-naming-strategy: SNAKE_CASE
@@ -18,6 +19,7 @@ server:
     whitelabel:
       enabled: false
   shutdown: graceful
+
 
 management:
   server:

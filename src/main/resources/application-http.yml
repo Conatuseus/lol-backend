@@ -1,0 +1,23 @@
+lol:
+  client:
+    http:
+      max-idle-connections: 40
+      keep-alive-time: 60000
+      connection-timeout: 5000
+      socket-timeout: 30000
+
+---
+spring.config.activate.on-profile: local
+
+lol:
+  client:
+    riot-games:
+      url: https://kr.api.riotgames.com
+
+---
+spring.config.activate.on-profile: real
+
+lol:
+  client:
+    riot-games:
+      url: https://kr.api.riotgames.com

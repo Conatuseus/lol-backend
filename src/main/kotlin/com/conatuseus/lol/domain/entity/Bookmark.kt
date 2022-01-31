@@ -27,4 +27,4 @@ data class Bookmark(
 
     @Column(nullable = true)
     val memo: String = ""
-)
+) : BaseTimeEntity()
