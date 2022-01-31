@@ -22,4 +22,4 @@ data class Loler(
     val accountId: String,
 
     val summonerLevel: Long
-)
+) : BaseTimeEntity()

@@ -27,4 +27,4 @@ data class User(
 
     @Column(nullable = true)
     val email: String = ""
-)
+) : BaseTimeEntity()
