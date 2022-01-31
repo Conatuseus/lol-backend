@@ -4,6 +4,7 @@ import com.conatuseus.lol.config.httpclient.HttpApiCreator
 import com.conatuseus.lol.config.httpclient.HttpClientBuilder
 import com.conatuseus.lol.config.properties.RiotGamesProperties
 import com.conatuseus.lol.service.riotgames.RiotGamesHttpApi
+import com.conatuseus.lol.util.camelObjectMapper
 import com.fasterxml.jackson.databind.ObjectMapper
 import okhttp3.logging.HttpLoggingInterceptor
 import org.springframework.context.annotation.Bean
@@ -27,7 +28,7 @@ class HttpApiConfig(
                 .addInterceptorIfDev(environment, HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
                 .build(),
             riotGamesProperties,
-            objectMapper,
+            camelObjectMapper,
             RiotGamesHttpApi::class
         ).create()
 }

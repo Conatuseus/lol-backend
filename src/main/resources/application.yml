@@ -19,11 +19,6 @@ server:
     whitelabel:
       enabled: false
   shutdown: graceful
-  servlet:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
 
 
 management:
