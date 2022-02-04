@@ -15,5 +15,7 @@ data class CommonErrorResponse(
 enum class ErrorCode(@JsonValue val code: String) {
     INTERNAL_ERROR("E1001"),
 
-    INVALID_REQUEST_FORMAT("E2001")
+    // validation errors
+    INVALID_REQUEST_FORMAT("E2001"),
+    PASSWORD_NOT_SAME("E2002")
 }

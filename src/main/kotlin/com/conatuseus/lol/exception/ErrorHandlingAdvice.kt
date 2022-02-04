@@ -69,4 +69,9 @@ class ErrorHandlingAdvice {
     @ExceptionHandler(HttpRequestMethodNotSupportedException::class)
     fun handleHttpRequestMethodNotSupportedException(e: HttpRequestMethodNotSupportedException) =
         CommonErrorResponse(code = ErrorCode.INVALID_REQUEST_FORMAT, msg = e.message)
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(ConstraintDeclarationException::class)
+    fun handleConstraintDeclarationException(e: ConstraintDeclarationException) =
+        CommonErrorResponse(code = e.code, msg = e.message)
 }
