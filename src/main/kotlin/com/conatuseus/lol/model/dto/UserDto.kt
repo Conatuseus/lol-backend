@@ -5,13 +5,13 @@ import com.conatuseus.lol.model.entity.User
 data class UserDto(
     val id: Long,
     val loginId: String,
-    val nickName: String,
+    val nickname: String,
     val email: String? = null
 ) {
     constructor(user: User) : this(
         id = user.id,
         loginId = user.loginId,
-        nickName = user.nickName,
+        nickname = user.nickname,
         email = user.email
     )
 }

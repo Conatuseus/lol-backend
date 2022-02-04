@@ -11,7 +11,7 @@ import javax.persistence.Table
 @Entity
 @Table(
     indexes = [
-        Index(name = "idx_login_id", columnList = "loginId")
+        Index(name = "ux_login_id", columnList = "loginId", unique = true)
     ]
 )
 data class User(
@@ -19,14 +19,14 @@ data class User(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0L,
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20, unique = true)
     val loginId: String,
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     val password: String,
 
-    @Column(nullable = false)
-    val nickName: String,
+    @Column(nullable = false, length = 10)
+    val nickname: String,
 
     @Column(nullable = true)
     val email: String? = null

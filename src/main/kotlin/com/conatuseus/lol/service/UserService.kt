@@ -16,7 +16,7 @@ class UserService(
             User(
                 loginId = request.loginId,
                 password = request.password,
-                nickName = request.nickName,
+                nickname = request.nickname,
                 email = request.email
             )
         )

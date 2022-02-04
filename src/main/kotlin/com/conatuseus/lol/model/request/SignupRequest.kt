@@ -5,7 +5,7 @@ data class SignupRequest(
     val loginId: String,
     val password: String,
     val confirmPassword: String,
-    val nickName: String,
+    val nickname: String,
     val email: String?
 ) {
     fun isNotPasswordSame() = !isPasswordSame()
