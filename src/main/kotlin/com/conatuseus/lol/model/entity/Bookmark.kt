@@ -1,4 +1,4 @@
-package com.conatuseus.lol.domain.entity
+package com.conatuseus.lol.model.entity
 
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -11,20 +11,20 @@ import javax.persistence.Table
 @Entity
 @Table(
     indexes = [
-        Index(name = "idx_login_id", columnList = "loginId")
+        Index(name = "ux_user_id_loler_id", columnList = "userId, lolerId", unique = true)
     ]
 )
-data class User(
+data class Bookmark(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0L,
 
     @Column(nullable = false)
-    val loginId: String,
+    val userId: Long,
 
     @Column(nullable = false)
-    val password: String,
+    val lolerId: Long,
 
     @Column(nullable = true)
-    val email: String = ""
+    val memo: String = ""
 ) : BaseTimeEntity()

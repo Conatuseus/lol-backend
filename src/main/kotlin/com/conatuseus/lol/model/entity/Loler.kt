@@ -1,4 +1,4 @@
-package com.conatuseus.lol.domain.entity
+package com.conatuseus.lol.model.entity
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

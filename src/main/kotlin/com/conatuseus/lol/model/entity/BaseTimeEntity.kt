@@ -1,4 +1,4 @@
-package com.conatuseus.lol.domain.entity
+package com.conatuseus.lol.model.entity
 
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate

@@ -1,4 +1,4 @@
-package com.conatuseus.lol.domain.model
+package com.conatuseus.lol.model.response
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonInclude
@@ -16,18 +16,6 @@ open class DefaultResponse(
     override val status: Int = Status.OK.status,
     override val message: String? = null,
 ) : Response
-
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder("status", "message")
-open class ErrorResponse(
-    override val status: Int = Status.ERROR.status,
-    override val message: String?
-) : Response {
-    constructor(status: Status, message: String?) : this(
-        status = status.status,
-        message = message
-    )
-}
 
 enum class Status(@JsonValue val status: Int) {
     UNKNOWN(-1),
