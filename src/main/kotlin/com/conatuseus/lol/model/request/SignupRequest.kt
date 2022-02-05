@@ -1,6 +1,6 @@
 package com.conatuseus.lol.model.request
 
-@PasswordConstraint
+@SignupConstraint
 data class SignupRequest(
     val loginId: String,
     val password: String,

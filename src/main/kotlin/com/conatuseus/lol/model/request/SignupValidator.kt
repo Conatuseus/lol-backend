@@ -10,7 +10,7 @@ import javax.validation.Payload
 import kotlin.reflect.KClass
 
 @Component
-class PasswordValidator : ConstraintValidator<PasswordConstraint, SignupRequest> {
+class SignupValidator : ConstraintValidator<SignupConstraint, SignupRequest> {
     companion object {
         const val LOGIN_ID_PATTERN = "(?i)^(?=.*[a-z])[a-z0-9]{8,20}\$"
         const val PASSWORD_PATTERN = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$"
@@ -63,8 +63,8 @@ class PasswordValidator : ConstraintValidator<PasswordConstraint, SignupRequest>
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
-@Constraint(validatedBy = [PasswordValidator::class])
-annotation class PasswordConstraint(
+@Constraint(validatedBy = [SignupValidator::class])
+annotation class SignupConstraint(
     val message: String = "Password is invalid. ",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
